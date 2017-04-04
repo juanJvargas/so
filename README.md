@@ -25,3 +25,5 @@ En total se manejaran 4 archivos io.c, ioforck.c, fileutil.h y fileutil.c:
 	alamacenados en un segmento del arreglo que retorna listar.el proceso hijo se encarga de hallar y comunicar al padre la 
 	cantidad de bytes que hay dentro de la primera mitad del arreglo mientras que padre calcula la otra mitad y espera a 
 	que hijo le envie la informacion necesaria para obtener el tamaño total de los elementos en el arreglo.
+	
+	Makefile: Tiene como proposito facilitar la compilacion io.c e iofork y la creacion de la libreria fileutil.c
