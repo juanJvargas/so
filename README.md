@@ -2,7 +2,7 @@ TORRES CAÑON JUAN DAVID 201526750
 
 VARGAS VARGAS JUAN JOSE 201523382
 
-En total se manejaran 4 archivos io.c, ioforck.c, fileutil.h y fileutil.c:
+En total se manejaran 5 archivos Makefile, io.c, ioforck.c, fileutil.h y fileutil.c:
 
 	fileutil.h: Sera una libreria que se encarga de alamacenar dentro de ella dos funciones que seran usadas por io.c 
 	e iofork.c donde cada una sera "bytes" y "listar" donde:
