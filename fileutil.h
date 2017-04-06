@@ -3,4 +3,4 @@
 //bytes es una funcion que retorna el numero de bytes de un archivo
 int bytes(char *nombre);
 //listar ers una funcion que retorna un arreglo con los archivos que esten dentro de un directorio
-char **listar(DIR *directorio, int *nArchivos);
+char **listar(char *ruta, int *numeroArchivos);
