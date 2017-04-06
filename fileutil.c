@@ -42,7 +42,7 @@ char **listar(char *ruta, int *numeroArchivos) {
   		if(entrada->d_type != DT_DIR){
 			//redimencionamos el arreglo y le asignamos un nuevo tamaño en memoria para alamcenar el nombre del archivo
   			arreglo = (char **)realloc(arreglo, (sizeof(char *) * (contador + 1)));
-            arreglo[contador] = (char *)malloc((sizeof(entrada->d_name) * sizeof(char)) + tamanoRuta);
+            arreglo[contador] = (char *)malloc((sizeof(entrada->d_name) * sizeof(char)) + tamano);
 			//guardamos el nombre del archivo
 			strcpy(arreglo[contador], ruta);
 			strcat(arreglo[contador], "/");
