@@ -9,22 +9,12 @@
 #include "fileutil.h"
 //funcion io fork que busca el tama�o total de todos los archivos dentro de un directrio suministrado por el usuario usando dos procesos
 int main(int argc, char **argv){
-	//el directorio sera usado como una estructura DIR
-  	DIR *directorio;
   	//nos aseguramos que el usuario halla suministrado la direccion
   	if(argc != 2){
   		
     	printf("Has olvidado introducir la ruta del directorio.\n");
     	return 1;
     }
-    //abrimos el archivo suministrado por el usuario con opendir
-  	directorio = opendir(argv[1]);
-  	//si opendir retorno un NULL entonces se sabe que es imposible abrie el directorio
-  	if (directorio == NULL){
-	
-		printf("No se puede abrir el directorio especificado.\n");
-  		return 1;
-	}
 	//definimos 4 variables necesarias para el uso del programa mas adelante
     int numeroArchivos = 0, tamanoTotal = 0, contador = 0, mitad = 0;
     //se define un arreglo que almacenara los nombres de los archivos que se encuentren dentro del directorio
@@ -38,6 +28,9 @@ int main(int argc, char **argv){
 	int pid = 0;
 	pipe(canal);
 	//si el proceso que se esta ejecutando es el padre
+	printf("Estudiante_1: 201523382.\n");
+	printf("Estudiante_2: 201526750	.\n");
+	printf("Total archivos: %d.\n", numeroArchivos);
 	if((pid = fork())){
 		//variable que almacena el valor total de los bytes contado por el proceso hijo
 		int tamanoHijo = 0;
@@ -50,10 +43,6 @@ int main(int argc, char **argv){
 		}
 		//espera por lso bytes que halla el hijo
 		read(canal[0], &tamanoHijo, sizeof(tamanoHijo));
-		
-		printf("Estudiante_1: 201523382.\n");
-		printf("Estudiante_2: 201526750.\n");
-		printf("Total archivos: %d.\n", numeroArchivos);
 		printf("Total bytes: %d.\n", (tamanoTotal + tamanoHijo));
 	}
 	
